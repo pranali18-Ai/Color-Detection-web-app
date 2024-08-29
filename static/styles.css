@@ -17,6 +17,6 @@ input[type="file"] {
 }
 
 img {
-    max-width: 100%;
+    max-width: 45%;
     height: auto;
 }

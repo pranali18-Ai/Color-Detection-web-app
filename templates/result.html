@@ -8,44 +8,29 @@
     <!-- Bootstrap CSS CDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
-        .color-box {
-            width: 50px;
-            height: 50px;
-            display: inline-block;
-            margin-right: 10px;
-            border: 1px solid #ddd;
-        }
+
     </style>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Color Detection</a>
-        <div class="collapse navbar-collapse">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('index') }}">Home</a>
-                </li>
-                {% if session.get('logged_in') %}
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('logout') }}">Logout</a>
-                </li>
-                {% endif %}
-            </ul>
-        </div>
-    </nav>
+
     <div class="container">
-        <h1 class="mt-5">Color Detection Result</h1>
+        <h1 class="mt-5">🎨 Color Detection Result</h1>
         <div class="mt-4">
-            <img id="uploaded-image" src="{{ url_for('uploaded_file', filename=image_file) }}" alt="Uploaded Image"
-                class="img-fluid" style="cursor: crosshair;" onclick="getColor(event)">
+            <img style="max-width: 55%; height: auto;" id="uploaded-image"
+                src="{{ url_for('uploaded_file', filename=image_file) }}" alt="Uploaded Image" class="img-fluid"
+                style="cursor: crosshair;" onclick="getColor(event)">
         </div>
         <div id="color-info" class="mt-3"></div>
-        <a href="{{ url_for('index') }}" class="btn btn-secondary mt-3">Upload Another Image</a>
-        <br>
-        <a href="{{ url_for('logout') }}" class="link-danger float-right" onmouseover="this.style.opacity='0.5';"
+        <a href="{{ url_for('index') }}" class="btn btn-secondary mt-3" style="width: 15%; margin-bottom: 10px;">Upload
+            Another Image</a>
+
+        <a href="{{ url_for('logout') }}" class="btn btn-danger mt-3"
+            style="width: 100px; margin-left: 32%; margin-bottom: 10px" onmouseover="this.style.opacity='0.5';"
             onmouseout="this.style.opacity='1';">
-            Log out </a>
+            Log out
+        </a>
+
     </div>
     <script>
         function getColor(event) {
